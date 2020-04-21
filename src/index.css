@@ -51,9 +51,16 @@ body {
   transform: rotateX(180deg);
 }
 
-.coin-animation {
-  -webkit-animation: flip-horizontal-top 0.4s ease-in-out 12;
-  animation: flip-horizontal-top 0.4s ease-in-out 12;
+.coin-animation-eagle {
+  -webkit-animation: flip-horizontal-top 0.4s ease-out 13;
+  animation: flip-horizontal-top 0.4s ease-out 13;
+  animation-fill-mode: forwards;
+}
+
+.coin-animation-tails {
+  -webkit-animation: flip-horizontal-top 0.4s ease-out 12;
+  animation: flip-horizontal-top 0.4s ease-out 12;
+  animation-fill-mode: forwards;
 }
 
 @-webkit-keyframes flip-horizontal-top {
