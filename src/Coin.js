@@ -1,28 +1,38 @@
 import React, { Component } from "react";
+let number = null;
 
 class Coin extends Component {
   state = {
-    number: Math.round(Math.random()),
+    number: null,
     class: "",
+    animation: false,
   };
 
   randomNumber = () => {
-    this.setState({ number: Math.round(Math.random()) });
+    number = Math.round(Math.random());
+    console.log(number);
   };
 
   handleClick = () => {
     this.randomNumber();
-    if (this.state.number === 0)
-      this.setState({ class: "coin-animation-eagle" });
-    if (this.state.number === 1)
-      this.setState({ class: "coin-animation-tails" });
+    this.setState({ animation: true });
   };
 
   render() {
+    const { animation } = this.state;
     return (
       <div className="coin-wrapper">
         <div className="coin">
-          <div className={`${this.state.class} coin-inner`}>
+          <div
+            className={`${
+              animation
+                ? number
+                  ? "coin-animation-tails"
+                  : "coin-animation-eagle"
+                : ""
+            } coin-inner`}
+            onAnimationEnd={() => this.setState({ animation: false })}
+          >
             <div className="coin-front">
               <p>tails</p>
             </div>
