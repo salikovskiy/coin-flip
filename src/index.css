@@ -26,10 +26,6 @@ body {
   transform-style: preserve-3d;
 }
 
-.coin:hover .coin-inner {
-  transform: rotateX(180deg);
-}
-
 .coin-front,
 .coin-back {
   position: absolute;

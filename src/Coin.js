@@ -6,6 +6,7 @@ class Coin extends Component {
     number: null,
     class: "",
     animation: false,
+    div: React.createRef(),
   };
 
   randomNumber = () => {
@@ -13,25 +14,39 @@ class Coin extends Component {
     console.log(number);
   };
 
-  handleClick = () => {
+  handleClick = (e) => {
+    if (this.state.div.current.classList[1] === "coin-animation-tails")
+      this.state.div.current.classList.remove("coin-animation-tails");
+    if (this.state.div.current.classList[1] === "coin-animation-eagle")
+      this.state.div.current.classList.remove("coin-animation-eagle");
+
     this.randomNumber();
     this.setState({ animation: true });
+
+    void this.state.div.current.offsetWidth;
+
+    if (number === 0)
+      this.state.div.current.classList.add("coin-animation-eagle");
+    if (number === 1)
+      this.state.div.current.classList.add("coin-animation-tails");
   };
 
   render() {
-    const { animation } = this.state;
+    // const { animation } = this.state;
     return (
       <div className="coin-wrapper">
         <div className="coin">
           <div
-            className={`${
-              animation
-                ? number
-                  ? "coin-animation-tails"
-                  : "coin-animation-eagle"
-                : ""
-            } coin-inner`}
-            onAnimationEnd={() => this.setState({ animation: false })}
+            ref={this.state.div}
+            className="coin-inner"
+            // className={`${
+            //   animation
+            //     ? number
+            //       ? "coin-animation-tails"
+            //       : "coin-animation-eagle"
+            //     : ""
+            // } coin-inner`}
+            // onAnimationEnd={() => this.setState({ animation: false })}
           >
             <div className="coin-front">
               <p>tails</p>
