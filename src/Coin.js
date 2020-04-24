@@ -21,8 +21,6 @@ class Coin extends Component {
       this.state.div.current.classList.remove("coin-animation-eagle");
 
     this.randomNumber();
-    this.setState({ animation: true });
-
     void this.state.div.current.offsetWidth;
 
     if (number === 0)
@@ -32,21 +30,13 @@ class Coin extends Component {
   };
 
   render() {
-    // const { animation } = this.state;
     return (
       <div className="coin-wrapper">
         <div className="coin">
           <div
             ref={this.state.div}
             className="coin-inner"
-            // className={`${
-            //   animation
-            //     ? number
-            //       ? "coin-animation-tails"
-            //       : "coin-animation-eagle"
-            //     : ""
-            // } coin-inner`}
-            // onAnimationEnd={() => this.setState({ animation: false })}
+            // onAnimationEnd={(e) => console.log(e)}
           >
             <div className="coin-front">
               <p>tails</p>

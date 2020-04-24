@@ -15,6 +15,7 @@ body {
   perspective: 1000px;
   background-color: transparent;
   border-radius: 50%;
+  overflow: visible;
 }
 
 .coin-inner {
@@ -24,6 +25,7 @@ body {
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
+  overflow: visible;
 }
 
 .coin-front,
@@ -37,35 +39,43 @@ body {
 }
 
 .coin-front {
-  background-color: #ece104;
+  background-image: url(./assets/eagle.png);
+  background-size: cover;
   color: black;
 }
 
 .coin-back {
-  background-color: #04beec;
+  background-image: url(./assets/tails.png);
+  background-size: cover;
   color: black;
   transform: rotateX(180deg);
 }
 
 .coin-animation-eagle {
-  -webkit-animation: flip-horizontal-top 0.4s ease-out 13;
-  animation: flip-horizontal-top 0.4s ease-out 13;
+  -webkit-animation: flip-horizontal-top 0.4s linear 13;
+  animation: flip-horizontal-top 0.4s linear 13;
   animation-fill-mode: forwards;
 }
 
 .coin-animation-tails {
-  -webkit-animation: flip-horizontal-top 0.4s ease-out 12;
-  animation: flip-horizontal-top 0.4s ease-out 12;
+  -webkit-animation: flip-horizontal-top 0.4s linear 12;
+  animation: flip-horizontal-top 0.4s linear 12;
+  animation-fill-mode: forwards;
 }
 
 @-webkit-keyframes flip-horizontal-top {
   0% {
     -webkit-transform: rotateX(0);
     transform: rotateX(0);
+    box-shadow: transparent;
+  }
+  50% {
+    box-shadow: 0px 0px 28px -4px rgba(181, 127, 18, 1);
   }
   100% {
     -webkit-transform: rotateX(180deg);
     transform: rotateX(180deg);
+    box-shadow: transparent;
   }
 }
 @keyframes flip-horizontal-top {
@@ -76,5 +86,20 @@ body {
   100% {
     -webkit-transform: rotateX(180deg);
     transform: rotateX(180deg);
+  }
+}
+
+@keyframes blur {
+  0% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+  }
+  50% {
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
   }
 }
