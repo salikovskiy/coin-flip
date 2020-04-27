@@ -38,16 +38,12 @@ class Coin extends Component {
             className="coin-inner"
             // onAnimationEnd={(e) => console.log(e)}
           >
-            <div className="coin-front">
-              <p>tails</p>
-            </div>
-            <div className="coin-back">
-              <p>eagle</p>
-            </div>
+            <div className="coin-front"></div>
+            <div className="coin-back"></div>
           </div>
         </div>
         <button className="coin-button" onClick={this.handleClick}>
-          Підкинути монетку
+          Start
         </button>
       </div>
     );
