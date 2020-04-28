@@ -1,6 +1,6 @@
 ## Simple coin flipper
 
-### [💽 Demo](https://github.com/salikovskiy/coin-flip)
+### [💽 Demo](https://toss-a-coin.netlify.app/)
 
 ## My notes:
 
