@@ -2,11 +2,6 @@
 
 ### [💽 Demo](https://github.com/salikovskiy/coin-flip)
 
-<video width="320" height="240" autoplay>
-  <source src="https://thumbs.gfycat.com/DetailedGrimyGermanwirehairedpointer-mobile.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
-
 ## My notes:
 
 - ### Refs
